@@ -119,8 +119,8 @@ $(document).ready(function () {
     <body>
         <div class="container mt-1">
             <h3 class="text-center mb-0" id="savePdfButton">LOOKMAN READYMADE CENTRE</h3>
-            <p class="text-center mb-0" >TELHATTA ROAD, SIWAN</p>
-            <p class="text-center mt-0">PNo. 7008975235</p>
+            <p class="text-center mb-0" >TELHATTA BAZAR, SIWAN</p>
+            <p class="text-center mt-0">PNo. 7009875235</p>
             <hr style="border: none; border-top: 1px dotted #000; width: 100%;" />
             <p class="mb-0"><strong>Bill To: </strong> ${customerName}</p>
             <div style="display: flex; justify-content: space-between; align-items: center;">
