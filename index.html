@@ -19,18 +19,60 @@
     <title>YUSUF</title>
   </head>
   <body>
-
     <div class="container">
-      <div class="d-flex justify-content-center align-items-center">
-        <img src="Logopit_1726235708498.jpg" alt="Logo" class="logo-img" />
-        <h2 class="text-center mt-1">LOOKMAN READYMADE CENTRE</h2>
-      </div>
-      
-      <button class="btn btn-success mb-3" id="generate-invoice">Generate Invoice</button>
-      <a href="profitCalc.html" class="btn btn-info mb-3">Profit Calculator</a>
-
+      <h2 class="text-center mt-1">LOOKMAN READYMADE CENTRE</h2>
+      <button class="btn btn-success" id="generate-invoice">
+        Generate Invoice
+      </button>
+      <a href="profitCalc.html">profitCalc</a>
       <div class="row">
+        <div class="col-md-6">
+          <form action="" id="item-form">
+            <div class="form-group mb-3">
+              <label for="customer-name">Bill to:</label>
+              <input type="text" class="form-control" id="customer-name" />
+            </div>
+            <div class="form-group mb-3">
+              <label for="item-name">Item Name:</label>
+              <input type="text" class="form-control" id="item-name" />
+              <button id="itembutton" class="item-button" data-item="Shirt">Nighty</button>
+              <button id="itembutton" class="item-button" data-item="Shirt">Kurti Set</button>
+              <button id="itembutton" class="item-button" data-item="Kurti">Kurti</button>
+              <button id="itembutton" class="item-button" data-item="Plazzo">Plazzo</button>
+              <button id="itembutton" class="item-button" data-item="Frock">Frock</button>
+              <button id="itembutton" class="item-button" data-item="Shirt">Nyra Set</button>
+              <button id="itembutton" class="item-button" data-item="Pant">Pant set</button>
+              <button id="itembutton" class="item-button" data-item="Shirt">Pant</button>
+              <button id="itembutton" class="item-button" data-item="Shirt">Sarara Set</button>
+              <button id="itembutton" class="item-button" data-item="Shirt">Laggies</button>
+              <button id="itembutton" class="item-button" data-item="Shirt">Joggers</button>
+              <button id="itembutton" class="item-button" data-item="Frock">D. Cotton</button>
+              <button id="itembutton" class="item-button" data-item="Shirt">D. Siffon</button>
+              <button id="itembutton" class="item-button" data-item="Shirt">D. Chanderi</button>
+              <button id="itembutton" class="item-button" data-item="Pant">D. Net</button>
+              <button id="itembutton" class="item-button" data-item="Shirt">D. CottonPrint</button>
+              <button id="itembutton" class="item-button" data-item="Shirt">Stole</button>
+              <button id="itembutton" class="item-button" data-item="Shirt">Scarf</button>
+
+            </div>
+            <div class="form-group mb-3">
+                <label for="item-qty">Item Qty:</label>
+                <input type="text" class="form-control" id="item-qty" />
+              </div>
+            <div class="form-group mb-4">
+              <label for="item-price">Item Price:</label>
+              <input type="text" class="form-control" id="item-price" />
+            </div>
+            <button type="submit" class="btn btn-primary">Add To Cart</button>
+          </form>
+        </div>
+
+        <div>
+          <br />
+        </div>
+
         <div class="col-md-6 main">
+          <div>
           <table class="table" id="cart-table">
             <thead>
               <tr>
@@ -42,64 +84,31 @@
             </thead>
             <tbody></tbody>
           </table>
-
-          <p id="total-qty">Total Qty: 0</p>
-          <p id="total-cost">Amount: ₹0</p>
-
-          <label for="prev-dues">Prev Dues:</label>
-          <input type="text" class="form-control mb-3" id="prev-dues" value="0" />
-
+        </div>
+        <div>
+          <p id="total-qty">Total Qty : 0</p>
+          <p id="total-cost">Amount : 0</p>
+          <label for="prev-dues">Prev Dues : 0</label>
+          <input type="text" class="form-control" id="prev-dues" /><br>
+          
+          <!-- New Amount Paid and Current Due -->
           <label for="amount-paid">Amount Paid:</label>
-          <input type="text" class="form-control mb-3" id="amount-paid" />
-
+          <input type="text" class="form-control" id="amount-paid" /><br>
           <p id="current-due">Current Due: ₹0</p>
-          <p id="total-amount">TOTAL: ₹0</p>
+          
+          <p id="total-amount">TOTAL : 0</p>
         </div>
-
-    <!-- Form Elements and Buttons to the Right Side -->
-    <div class="col-md-6 ms-auto">
-      <form action="" id="item-form">
-        <div class="form-group mb-3">
-          <label for="customer-name">Bill to:</label>
-          <input type="text" class="form-control" id="customer-name" />
+        
         </div>
-        <div class="form-group mb-3">
-          <label for="item-qty">Item Qty:</label>
-          <input type="text" class="form-control" id="item-qty" />
-        </div>
-        <div class="form-group mb-4">
-          <label for="item-price">Item Price:</label>
-          <input type="text" class="form-control" id="item-price" />
-        </div>
-        <button type="submit" class="btn btn-primary">Add To Cart</button>
-      </form>
-
-        <div class="form-group mb-3">
-          <label for="item-name">Item Name:</label>
-          <input type="text" class="form-control" id="item-name" />
-  
-          <!-- Corrected button IDs and classes -->
-          <button class="item-button btn btn-secondary mt-2" data-item="Kurti Set">Kurti Set</button>
-          <button class="item-button btn btn-secondary mt-2" data-item="Kurti">Kurti</button>
-          <button class="item-button btn btn-secondary mt-2" data-item="Plazzo">Plazzo</button>
-          <button class="item-button btn btn-secondary mt-2" data-item="Frock">Frock</button>
-          <button class="item-button btn btn-secondary mt-2" data-item="Nyra Set">Nyra Set</button>
-          <button class="item-button btn btn-secondary mt-2" data-item="Pant Set">Pant Set</button>
-          <button class="item-button btn btn-secondary mt-2" data-item="Pant">Pant</button>
-          <button class="item-button btn btn-secondary mt-2" data-item="Sarara Set">Sarara Set</button>
-          <button class="item-button btn btn-secondary mt-2" data-item="Joggers">Joggers</button>
-        </div>
-
-      </div>
       </div>
     </div>
-
+    
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
       integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
