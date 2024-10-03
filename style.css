@@ -1,134 +1,73 @@
-body {
-  background-color: #fff;
+body{
+background-color: #fff;
 }
-
-* {
-  color: #000000;
+*{
+    color: #000000;
 }
-
-.select {
-  margin-bottom: 5px;
-  background-color: #000;
-  padding: 5px;
-  width: 100%;
+.select{
+    margin-bottom: 5px;
+    background-color: #000;
+    padding: 5px;
+    width: 100%;
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
+    width: max-content;
 }
-
 th, td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
 #cart-table th,
-#cart-table td {
-  text-align: center;
-}
-
-#total-qty, #total-cost, #total-amount {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-#generate-invoice {
-  display: block;
-  margin: 0 auto 5px;
-}
-
-.logo-img {
-  width: 80px;
-  height: auto;
-  margin-right: 15px;
-}
-
-.item-button {
-  margin-top: 5px;
-  background-color: #0058b0;
-  border: none;
-  border-radius: 6px;
-  color: #fff;
-  padding: 6px 16px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-}
-
-@media print {
-  .no-print {
-    display: none;
-  }
-}
-
-/* Default layout for larger screens */
-.row {
-  display: flex;
-  flex-direction: row;
-}
-
-.main {
-  margin-top: 20px;
-}
-
-/* Tablet and mobile view under 968px */
-@media (max-width: 808px) {
-  .row {
-    flex-direction: column;
-  }
-
-  .col-md-6 {
-    width: 100%;
-  }
-
-  /* Align form and item buttons to the right for smaller screens */
-  .ms-auto {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
-  .form-group {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .item-button {
-    width: 100%; /* Ensure buttons stretch full width */
-  }
-
-  .main {
-    margin-top: 0;
-  }
-}
-
-/* Adjust for very small screens (under 576px) */
-@media (max-width: 576px) {
-  .row {
-    flex-direction: column;
-  }
-
-  .col-md-6 {
-    width: 100%;
-  }
-
-  .ms-auto {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
-  .form-group {
-    justify-content: flex-end;
-    align-items: flex-end;
-    width: 100%;
-  }
-
-  .item-button {
-    width: 100%; /* Make buttons full-width on small screens */
+#cart-table td{
     text-align: center;
+}
+#total-qty{
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+#total-cost{
+    font-size: 20px;
+    font-weight: bold;
+}
+#generate-invoice{
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+#itembutton{
+    margin-top: 5px;
+    appearance: none;
+    background-color: #0058b0;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    padding: 6px 16px;
+    position: relative;
+    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-wrap: break-word;
   }
+
+
+@media print{
+    .no-print{
+        display: none;
+    }
 }
