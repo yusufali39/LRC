@@ -148,7 +148,6 @@ $(document).ready(function () {
     </head>
     <body>
         <div class="container mt-1">
-              <img src="Logopit_1726235708498.jpg" alt="Logo" class="logo-img">
             <h3 class="text-center mb-0" id="savePdfButton">LOOKMAN READYMADE CENTRE</h3>
             <p class="text-center mb-0" >TELHATTA ROAD, SIWAN</p>
             <p class="text-center mt-0">PNo. 7009875235</p>
