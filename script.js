@@ -50,8 +50,7 @@ $(document).ready(function () {
       $("#item-name").val("");
       $("#item-price").val("");
       $("#item-qty").val("");
-    // Automatically focus on the "Bill to" input
-  
+
     } else {
       alert("Jawaid bhai customer name, item name, and item price fill kiiye.");
     }
