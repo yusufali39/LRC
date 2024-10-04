@@ -91,15 +91,25 @@ $(document).ready(function () {
   // Function to update total amount
   function updateTotalAmt() {
     var totalAmt = 0;
+    
     items.forEach(function (item) {
       totalAmt += item.price * item.qty;
     });
+    
     totalAmt += prevDues;
+    
     $("#total-amount").text("TOTAL : ₹" + totalAmt.toFixed(2));
     updateCurrentDue();
   }
+  
   function updateCurrentDue() {
-    var totalAmt = parseFloat($("#total-amount").text().split("₹")[1]) || 0;
+    var totalAmt = 0;
+    
+    items.forEach(function (item) {
+        totalAmt += item.price * item.qty;
+    });
+   
+    totalAmt += prevDues;
     var currentDue = totalAmt - amountPaid;
     $("#current-due").text("Current Due: ₹" + currentDue.toFixed(2));
   }
