@@ -8,10 +8,11 @@ $(document).ready(function () {
   $("#cart-table").on("click", ".btn-danger", removeItemFromCart);
   $("#generate-invoice").on("click", generateInvoice);
 
-  $(".item-button").on("click", function (event) {
-    event.preventDefault();
-    var selectedItem = $(this).text();
-    $("#item-name").val(selectedItem);
+  // Prevent form submission on Enter key press
+  $('#item-form input').on('keydown', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();  // Prevents the form from being submitted
+    }
   });
 
   function addItemToCart(event) {
