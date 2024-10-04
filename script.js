@@ -49,9 +49,13 @@ $(document).ready(function () {
       updateTotalCost();
       updateTotalQty();
       updateTotalAmt();
+      
       $("#item-name").val("");
       $("#item-price").val("");
       $("#item-qty").val("");
+
+      // Focus the cursor back to the "item name" input field
+      $("#item-name").focus();
 
     } else {
       alert("Jawaid bhai customer name, item name, and item price fill kiiye.");
