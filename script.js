@@ -8,10 +8,11 @@ $(document).ready(function () {
   $("#cart-table").on("click", ".btn-danger", removeItemFromCart);
   $("#generate-invoice").on("click", generateInvoice);
 
-  // Prevent form submission on Enter key press
+  // Detect "Enter" key and manually trigger "Add to Cart" when pressed
   $('#item-form input').on('keydown', function (e) {
     if (e.key === 'Enter') {
-      e.preventDefault();  // Prevents the form from being submitted
+      e.preventDefault();  // Prevent form submission
+      addItemToCart(e);     // Trigger the addItemToCart function
     }
   });
 
