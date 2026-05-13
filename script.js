@@ -186,7 +186,7 @@ function removeItemFromCart() {
     </head>
     <body>
         <div class="container mt-1">
-            <h3 class="text-center mb-0" id="savePdfButton">LOOKMAN READYMADE CENTRE</h3>
+            <h6 class="text-center mb-0" id="savePdfButton">LOOKMAN READYMADE CENTRE</h6>
             <p class="text-center mb-0" >TELHATTA ROAD, SIWAN</p>
             <p class="text-center mt-0">PNo. 7009875235</p>
             <hr style="border: none; border-top: 1px dotted #000; width: 100%;" />
@@ -225,21 +225,21 @@ function removeItemFromCart() {
     invoice += `</tbody></table><footer>
     <p class="mb-0">Total Qty: ${getTotalQty()}</p>
 
-    <h4 style="text-align: left;" class="mb-0">Previous Dues: <span style="float: right;"> ₹${prevDues.toFixed(
+    <h6 style="text-align: left;" class="mb-0">Previous Dues: <span style="float: right;"> ₹${prevDues.toFixed(
       2
-    )}</span></h4> 
+    )}</span></h6> 
 
-    <h3 style="text-align: left;" class="mb-0">Total Amount: <span style="float: right;"> ₹${totalAmt.toFixed(
+    <h6 style="text-align: left;" class="mb-0">Total Amount: <span style="float: right;"> ₹${totalAmt.toFixed(
       2
-    )}</span></h3>
+    )}</span></h6>
 
-    <h3 style="text-align: left;" class="mb-0">Amount Paid: <span style="float: right;"> ₹${amountPaid.toFixed(
+    <h6 style="text-align: left;" class="mb-0">Amount Paid: <span style="float: right;"> ₹${amountPaid.toFixed(
       2
-    )}</span></h3>
+    )}</span></h6>
 
-    <h3 style="text-align: left;" class="mb-0">Current Due: <span style="float: right;"> ₹${currentDue.toFixed(
+    <h6 style="text-align: left;" class="mb-0">Current Due: <span style="float: right;"> ₹${currentDue.toFixed(
       2
-    )}</span></h3> 
+    )}</span></h6> 
 
     <hr style="border: none; border-top: 1px dotted #000; width: 100%;" />
 
