@@ -1,59 +1,58 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lookman Readymade Centre · Premium Billing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2 class="text-center">LOOKMAN READYMADE CENTRE</h2>
+    <div class="brand-sub">TELHATTA ROAD, SIWAN · 7009875235</div>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css" />
-    <title>YUSUF</title>
-  </head>
-  <body>
-    <div class="container">
-      <h2 class="text-center mt-1">LOOKMAN READYMADE CENTRE</h2>
+    <div class="d-flex align-items-center justify-content-center flex-wrap gap-2 mb-2">
       <button class="btn btn-success" id="generate-invoice">
-        Generate Invoice
+        <i class="fas fa-file-invoice me-1"></i> Generate Invoice
       </button>
-      <a href="profitCalc.html">profitCalc</a>
-      <div class="row">
-        <div class="col-md-6">
-          <form action="" id="item-form">
-            <div class="form-group mb-3">
-              <label for="customer-name">Bill to:</label>
-              <input type="text" class="form-control" id="customer-name" />
-            </div>
-            <div class="form-group mb-3">
-              <label for="item-name">Item Name:</label>
-              <input type="text" class="form-control" id="item-name" />
-            </div>
-            <div class="form-group mb-3">
-                <label for="item-qty">Item Qty:</label>
-                <input type="text" class="form-control" id="item-qty" />
-              </div>
-            <div class="form-group mb-4">
-              <label for="item-price">Item Price:</label>
-              <input type="text" class="form-control" id="item-price" />
-            </div>
-            <button type="submit" class="btn btn-primary">Add To Cart</button>
-          </form>
-        </div>
+      <a href="profitCalc.html" class="profit-link">
+        <i class="fas fa-calculator me-1"></i>profitCalc
+      </a>
+    </div>
 
-        <div>
-          <br />
-        </div>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <form id="item-form">
+          <div class="form-group">
+            <label for="customer-name">Bill to</label>
+            <input type="text" class="form-control" id="customer-name" placeholder="Customer name" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="item-name">Item name</label>
+            <input type="text" class="form-control" id="item-name" placeholder="e.g. Cotton shirt" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="item-qty">Quantity</label>
+            <input type="text" class="form-control" id="item-qty" placeholder="1" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="item-price">Price (₹)</label>
+            <input type="text" class="form-control" id="item-price" placeholder="0.00" autocomplete="off" />
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-cart-plus me-1"></i> Add to cart
+          </button>
+        </form>
+      </div>
 
-        <div class="col-md-6 main">
-          <div>
+      <div class="col-md-6 main">
+        <div class="table-responsive">
           <table class="table" id="cart-table">
             <thead>
               <tr>
@@ -61,35 +60,32 @@
                 <th>Price</th>
                 <th>Qty</th>
                 <th>Amount</th>
+                <th></th>
               </tr>
             </thead>
             <tbody></tbody>
           </table>
         </div>
+
         <div>
           <p id="total-qty">Total Qty : 0</p>
-          <p id="total-cost">Amount : 0</p>
-          <label for="prev-dues">Prev Dues : 0</label>
-          <input type="text" class="form-control" id="prev-dues" /><br>
-          
-          <!-- New Amount Paid and Current Due -->
-          <label for="amount-paid">Amount Paid:</label>
-          <input type="text" class="form-control" id="amount-paid" /><br>
-          <p id="current-due">Current Due: ₹0</p>
-          
-          <p id="total-amount">TOTAL : 0</p>
-        </div>
-        
+          <p id="total-cost">Amount : ₹0.00</p>
+
+          <label for="prev-dues">Previous dues</label>
+          <input type="text" class="form-control" id="prev-dues" placeholder="0.00" />
+
+          <label for="amount-paid">Amount paid</label>
+          <input type="text" class="form-control" id="amount-paid" placeholder="0.00" />
+
+          <p id="current-due">Current Due: ₹0.00</p>
+          <p id="total-amount">TOTAL : ₹0.00</p>
         </div>
       </div>
     </div>
-    
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
-      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUmS8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
