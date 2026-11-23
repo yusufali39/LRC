@@ -1,73 +1,359 @@
-body{
-background-color: #fff;
-}
-*{
-    color: #000000;
-}
-.select{
-    margin-bottom: 5px;
-    background-color: #000;
-    padding: 5px;
-    width: 100%;
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    width: max-content;
-}
-th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+body {
+  background: #f3f6fc;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 2rem 1.5rem;
+  color: #1a1f2b;
+  line-height: 1.5;
 }
 
-#cart-table th,
-#cart-table td{
-    text-align: center;
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 10%, rgba(220, 230, 255, 0.5), transparent 60%),
+              radial-gradient(circle at 90% 80%, rgba(200, 220, 255, 0.4), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
 }
-#total-qty{
-    margin-bottom: 0;
-    font-size: 20px;
-    font-weight: bold;
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
 }
-#total-cost{
-    font-size: 20px;
-    font-weight: bold;
+
+h2 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0b1b33;
+  font-size: 1.9rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.2rem;
 }
-#generate-invoice{
-    display: flex;
-    margin: 0 auto;
-    margin-bottom: 5px;
+
+.brand-sub {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: #3d5a7a;
+  text-transform: uppercase;
+  margin-top: -0.25rem;
+  margin-bottom: 0.5rem;
 }
-#itembutton{
-    margin-top: 5px;
-    appearance: none;
-    background-color: #0058b0;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 6px;
-    box-sizing: border-box;
-    color: #ffffff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    list-style: none;
-    padding: 6px 16px;
-    position: relative;
-    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-    white-space: nowrap;
-    word-wrap: break-word;
+
+#generate-invoice {
+  background: #0b2b4f;
+  border: none;
+  border-radius: 48px;
+  padding: 0.7rem 2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  color: white;
+  box-shadow: 0 10px 18px -8px rgba(11, 43, 79, 0.3);
+  transition: all 0.2s ease;
+  margin: 0 auto 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+#generate-invoice:hover {
+  background: #123b66;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 28px -10px rgba(11, 43, 79, 0.4);
+}
+
+#generate-invoice:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 14px -6px rgba(11, 43, 79, 0.3);
+}
+
+a[href="profitCalc.html"] {
+  display: inline-block;
+  margin-left: 1rem;
+  font-weight: 500;
+  color: #1d4c7a;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+  font-size: 0.9rem;
+}
+
+a[href="profitCalc.html"]:hover {
+  border-bottom-color: #1d4c7a;
+}
+
+.row {
+  margin-top: 1rem;
+}
+
+.col-md-6 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+#item-form {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1.75rem 1.5rem 1.5rem;
+  border-radius: 28px;
+  box-shadow: 0 18px 40px -16px rgba(0, 20, 50, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+  transition: box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+#item-form:hover {
+  box-shadow: 0 24px 50px -18px rgba(0, 30, 70, 0.25);
+}
+
+.form-group {
+  margin-bottom: 1.4rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #2c4b6e;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.form-control {
+  background: #ffffffcc;
+  backdrop-filter: blur(4px);
+  border: 1.5px solid #d9e2ef;
+  border-radius: 16px;
+  padding: 0.7rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #0f263f;
+  transition: all 0.18s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.form-control:focus {
+  border-color: #2b6a9e;
+  box-shadow: 0 0 0 4px rgba(43, 106, 158, 0.1), 0 4px 10px -4px rgba(0, 0, 0, 0.05);
+  background: white;
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: #9badc2;
+  font-weight: 400;
+}
+
+.btn-primary {
+  background: #1e4d7c;
+  border: none;
+  border-radius: 60px;
+  padding: 0.75rem 1.8rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  color: #ffffff;
+  box-shadow: 0 12px 20px -12px #1e4d7c80;
+  transition: all 0.2s;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.btn-primary:hover {
+  background: #12375c;
+  transform: translateY(-2px);
+  box-shadow: 0 20px 28px -14px #1e4d7c;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  background: #0f2e4b;
+}
+
+.main {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 28px;
+  padding: 1.75rem 1.5rem 1.5rem;
+  box-shadow: 0 18px 40px -16px rgba(0, 20, 50, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: box-shadow 0.3s ease;
+}
+
+.main:hover {
+  box-shadow: 0 24px 50px -18px rgba(0, 30, 70, 0.25);
+}
+
+#cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+#cart-table th {
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-size: 0.72rem;
+  color: #3b5e7e;
+  padding: 0.9rem 0.5rem;
+  border-bottom: 2px solid #cdddec;
+  background: transparent;
+}
+
+#cart-table td {
+  padding: 0.85rem 0.5rem;
+  text-align: center;
+  font-weight: 500;
+  color: #1d3147;
+  border-bottom: 1px solid #e4ecf5;
+  vertical-align: middle;
+}
+
+#cart-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+#cart-table tbody tr {
+  transition: background 0.15s;
+}
+
+#cart-table tbody tr:hover {
+  background: #ecf3fc;
+  border-radius: 12px;
+}
+
+.btn-danger {
+  background: transparent;
+  border: none;
+  color: #b13e4b;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 40px;
+  transition: all 0.15s;
+  opacity: 0.7;
+}
+
+.btn-danger:hover {
+  background: #ffe5e9;
+  color: #9e2a38;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.main > div:last-child {
+  background: #ffffffb8;
+  backdrop-filter: blur(8px);
+  border-radius: 22px;
+  padding: 1.2rem 1.4rem;
+  margin-top: 1.2rem;
+  border: 1px solid #ffffff;
+  box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.1);
+}
+
+#total-qty,
+#total-cost {
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+  color: #213a55;
+  letter-spacing: -0.2px;
+}
+
+#total-amount {
+  font-weight: 700;
+  font-size: 1.45rem;
+  color: #0f2b47;
+  margin-top: 0.8rem;
+  margin-bottom: 0.2rem;
+  padding-top: 0.7rem;
+  border-top: 2px dashed #b7cee4;
+  display: flex;
+  justify-content: space-between;
+}
+
+#current-due {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #164a6e;
+  margin-top: 0.5rem;
+  padding: 0.6rem 0;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 12px;
+  background: #e6f0fa;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.main label {
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #2a4b6e;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+#prev-dues,
+#amount-paid {
+  background: #ffffffdd;
+  border: 1.5px solid #d3e0ee;
+  border-radius: 40px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #0a263d;
+  transition: 0.18s;
+  width: 100%;
+  margin-bottom: 0.6rem;
+}
+
+#prev-dues:focus,
+#amount-paid:focus {
+  border-color: #2b6a9e;
+  box-shadow: 0 0 0 3px rgba(43, 106, 158, 0.1);
+  background: #fff;
+  outline: none;
+}
+
+hr {
+  border: none;
+  border-top: 2px dotted #b8cee4;
+  margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem 0.8rem;
   }
-
-
-@media print{
-    .no-print{
-        display: none;
-    }
+  h2 {
+    font-size: 1.5rem;
+  }
+  #item-form,
+  .main {
+    padding: 1.5rem 1.2rem;
+  }
+  #cart-table th,
+  #cart-table td {
+    padding: 0.6rem 0.2rem;
+    font-size: 0.8rem;
+  }
 }
